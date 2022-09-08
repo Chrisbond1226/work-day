@@ -5,6 +5,14 @@ var displayTime = function () {
   document.querySelector("#currentDay").appendChild(showTime);
 };
 
-var enterData = function () {};
+$(".list-group").on("click", "p", function () {
+  var text = $(this).text().trim();
+
+  var textInput = $("<textarea>").val(text);
+
+  $(this).replaceWith(textInput);
+
+  textInput.trigger("focus");
+});
 
 displayTime();
